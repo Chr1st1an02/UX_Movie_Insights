@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="200.0" prefWidth="200.0">
+	<top>
+    	<Label text="Suche" BorderPane.alignment="CENTER" />
+	</top>
+	<center>
+		<TextField BorderPane.alignment="CENTER" />
+	</center>
+</BorderPane>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import application.filmcard.FilmCardBorderPane?>
+
+<?import javafx.scene.control.Label?>
+<FilmCardBorderPane >
+	<bottom>
+		<Label text="Label" />
+	</bottom>
+</FilmCardBorderPane>
