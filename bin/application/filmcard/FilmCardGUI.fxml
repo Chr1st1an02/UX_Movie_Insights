@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import application.filmcard.FilmCardBorderPane?>
-
 <?import javafx.scene.control.Label?>
-<FilmCardBorderPane styleClass="filmCardPane" maxHeight="130.0" maxWidth="90.0" minHeight="130.0" minWidth="90.0">
-	<bottom>
-		<Label text="Label" />
-	</bottom>
-</FilmCardBorderPane>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="130.0" maxWidth="90.0" minHeight="130.0" minWidth="90.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
+   <bottom>
+      <Label fx:id="lblTitel" text="Label" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.filmcard.FilmCardBorderPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +28,7 @@ public class MenuController implements Initializable {
     void onMenuXCLick(ActionEvent event) {
     	StackPane root = (StackPane)((Node)event.getSource()).getScene().getRoot();
 		 
-//		root.getChildren().add(1, menu);
+		root.getChildren().remove(1);
     }
 
 	@Override

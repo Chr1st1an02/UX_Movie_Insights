@@ -8,7 +8,7 @@
 
 <BorderPane id="rubrikPane" fx:id="rubrikPane" maxHeight="160.0" maxWidth="1.7976931348623157E308" minHeight="160.0" minWidth="400.0" prefHeight="160.0" prefWidth="517.0" styleClass="rubrikPane" GridPane.rowIndex="2" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rubrik.RubrikController">
                <top>
-                  <Label text="Title" BorderPane.alignment="CENTER" />
+                  <Label fx:id="lblRubrikTitle" text="Title" BorderPane.alignment="CENTER" />
                </top>
                <center>
                   <!-- <GridPane fx:id="filmeGrid" BorderPane.alignment="CENTER"> -->

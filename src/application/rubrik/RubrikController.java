@@ -2,9 +2,13 @@ package application.rubrik;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
-import application.filmcard.FilmCardBorderPane;
+import application.datamodel.Datenbank;
+import application.datamodel.Film;
+import application.datamodel.Genre;
+import application.filmcard.FilmCardController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -19,23 +23,23 @@ import javafx.scene.layout.Priority;
 
 public class RubrikController implements Initializable{
 
+	private Genre genre;
+	private List<Film> filme;
+	
     @FXML
-    //private GridPane filmeGrid;
 	private HBox filmeGrid;
     
     @FXML
     private BorderPane rubrikPane;
     
+    @FXML
+    private Label lblRubrikTitle;
+    
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-
-		
-		
-		
-		
 		RubrikWidthListener rubrikPaneSizeListener = new RubrikWidthListener(); 
 	    
+		
 	  
 		rubrikPane.widthProperty().addListener(rubrikPaneSizeListener);
 	}
@@ -44,15 +48,13 @@ public class RubrikController implements Initializable{
 
 		@Override
 		public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-			System.out.println("Height: " + rubrikPane.getHeight() + " Width: " + rubrikPane.getWidth());
-			
 			try {
 				filmeGrid.getChildren().clear();
 				for(int i=0; i<((rubrikPane.getWidth()-100)/100); i++) {
-					FilmCardBorderPane filmCard = FXMLLoader.load(getClass().getResource("/application/filmcard/FilmCardGUI.fxml"));
-//					setFilmCardTitle(filmCard, "Erster Title");
-					filmCard.setTitle(i+" Title");
-//					filmeGrid.add(filmCard,i,0);
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/filmcard/FilmCardGUI.fxml"));
+					BorderPane filmCard = fxmlLoader.load();
+					FilmCardController filmCardController = fxmlLoader.getController();
+					filmCardController.setFilm(filme.get(i));
 					filmeGrid.getChildren().add(filmCard);
 				}
 				
@@ -71,7 +73,16 @@ public class RubrikController implements Initializable{
     @FXML
     public void nextPage(ActionEvent event) {
     	System.out.println("nextPage");
-    	
+    }
+    
+    public void setGenre(Genre genre) {
+    	this.genre = genre;
+    	this.setTitle(genre.getName());
+    	filme = Datenbank.getDatenbank().getFilme(genre);
+    }
+    
+    private void setTitle(String title) {
+    	lblRubrikTitle.setText(title);
     }
     
     
