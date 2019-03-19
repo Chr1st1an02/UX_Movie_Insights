@@ -4,7 +4,7 @@
 <?import application.filmcard.FilmCardBorderPane?>
 
 <?import javafx.scene.control.Label?>
-<FilmCardBorderPane >
+<FilmCardBorderPane styleClass="filmCardPane" maxHeight="130.0" maxWidth="90.0" minHeight="130.0" minWidth="90.0">
 	<bottom>
 		<Label text="Label" />
 	</bottom>

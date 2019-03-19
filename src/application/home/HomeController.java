@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.rubrik.RubrikController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,12 +27,18 @@ public class HomeController implements Initializable{
 			ImageView banner = FXMLLoader.load(getClass().getResource("/application/banner/bannerGUI.fxml"));
 			homeGrid.add(banner, 0, 1);
 			
-			BorderPane rubrik = FXMLLoader.load(getClass().getResource("/application/rubrik/RubrikGUI.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/rubrik/RubrikGUI.fxml"));
+			BorderPane rubrik= loader.load();
+			RubrikController rubrikController = loader.getController();
+			
 			homeGrid.add(rubrik, 0, 2);
+			rubrikController.nextPage(null);
+			
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
     
     

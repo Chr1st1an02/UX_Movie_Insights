@@ -3,12 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<BorderPane prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.navigation.NavigationController">
    <right>
-     <Button id="vorgemerkt" mnemonicParsing="false"  text="Vorgemerkt" BorderPane.alignment="CENTER" />
+     <Button id="vorgemerkt" mnemonicParsing="false" onAction="#onVorgemerktClicked" text="Vorgemerkt" BorderPane.alignment="CENTER" />
    </right>
    <left>
-     <Button mnemonicParsing="false" text="Menu" BorderPane.alignment="CENTER" />
+     <Button mnemonicParsing="false" onAction="#onMenuClicked" text="Menu" BorderPane.alignment="CENTER" />
    </left>
 </BorderPane>
-

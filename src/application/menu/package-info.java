@@ -5,4 +5,4 @@
  * @author bpall
  *
  */
-package application.banner;
+package application.menu;

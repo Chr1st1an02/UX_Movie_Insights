@@ -19,7 +19,9 @@ public class MainController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		System.out.println("Main Initializable");
 		try {
+			
 		//TOP
 			BorderPane navigation = FXMLLoader.load(getClass().getResource("/application/navigation/NavigationGUI.fxml"));
 			mainBorderPane.setTop(navigation);
