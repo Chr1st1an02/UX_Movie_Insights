@@ -1,9 +1,12 @@
 package application.rubrik;
 
+import java.awt.print.Pageable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javax.imageio.ImageTypeSpecifier;
 
 import application.datamodel.Datenbank;
 import application.datamodel.Film;
@@ -25,6 +28,8 @@ public class RubrikController implements Initializable{
 
 	private Genre genre;
 	private List<Film> filme;
+	private int page=0;
+	private int filmePerPage;
 	
     @FXML
 	private HBox filmeGrid;
@@ -39,8 +44,6 @@ public class RubrikController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		RubrikWidthListener rubrikPaneSizeListener = new RubrikWidthListener(); 
 	    
-		
-	  
 		rubrikPane.widthProperty().addListener(rubrikPaneSizeListener);
 	}
 	
@@ -48,31 +51,42 @@ public class RubrikController implements Initializable{
 
 		@Override
 		public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-			try {
-				filmeGrid.getChildren().clear();
-				for(int i=0; i<((rubrikPane.getWidth()-100)/100); i++) {
-					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/filmcard/FilmCardGUI.fxml"));
-					BorderPane filmCard = fxmlLoader.load();
-					FilmCardController filmCardController = fxmlLoader.getController();
-					filmCardController.setFilm(filme.get(i));
-					filmeGrid.getChildren().add(filmCard);
-				}
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}	
+			int filmePerPageNeu = (int)((rubrikPane.getWidth()-100)/100);
+			page= page*filmePerPage/filmePerPageNeu;
+			filmePerPage = filmePerPageNeu;
+			showFilme();
 		}
 
 	}
 	
-//	private void setFilmCardTitle(BorderPane filmCard, String title) {
-//		Label titleLabel = (Label) filmCard.getBottom();
-//		titleLabel.setText(title);
-//	}
+	private void showFilme(){
+		try {
+			filmeGrid.getChildren().clear();
+			for(int i=page*filmePerPage; i<page*filmePerPage+filmePerPage && i<filme.size(); i++) {
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/filmcard/FilmCardGUI.fxml"));
+				BorderPane filmCard = fxmlLoader.load();
+				FilmCardController filmCardController = fxmlLoader.getController();
+				filmCardController.setFilm(filme.get(i));
+				filmeGrid.getChildren().add(filmCard);
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+	}
 	
     @FXML
     public void nextPage(ActionEvent event) {
-    	System.out.println("nextPage");
+    	page = (page!=((filme.size()+1)/filmePerPage)?page+1:0);
+    	System.out.println(page);
+    	showFilme();
+    }
+    
+    @FXML
+    void prevPage(ActionEvent event) {
+    	page = (page!=0?page-1:((filme.size()+1)/filmePerPage));
+    	System.out.println(page);
+    	showFilme();
     }
     
     public void setGenre(Genre genre) {

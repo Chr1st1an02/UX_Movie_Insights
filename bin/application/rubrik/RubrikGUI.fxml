@@ -40,4 +40,7 @@
                <right>
                   <Button mnemonicParsing="false" onAction="#nextPage" text="&gt;" BorderPane.alignment="CENTER" />
                </right>
+   <left>
+      <Button mnemonicParsing="false" onAction="#prevPage" text="&lt;" BorderPane.alignment="CENTER" />
+   </left>
             </BorderPane>

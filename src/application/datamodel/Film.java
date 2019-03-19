@@ -13,7 +13,7 @@ public class Film {
 	private int duration;
 	private int fsk;
 	
-	private Genre genre;
+	private List<Genre> genreList;
 	private List<Plattform> plattformList;
 	
 	public Film(String title, String description, int duration, int fsk, Genre genre, Plattform ...plattforms) {
@@ -21,7 +21,7 @@ public class Film {
 		this.setDescription(description);
 		this.setDuration(duration);
 		this.setFsk(fsk);
-		this.setGenre(genre);
+		this.addGenre(genre);
 		
 		for(Plattform plattform :plattforms) {
 			addPlattform(plattform);
@@ -65,18 +65,31 @@ public class Film {
 
 
 
-	public Genre getGenre() {
-		return genre;
+	public List<Genre> getGenreList() {
+		return genreList;
 	}
 
 
 
-	public void setGenre(Genre genre) {
-		this.genre = genre;
+	public void setGenre(List<Genre> genreList) {
+		this.genreList = genreList;
 	}
 	
 	
-
+	public void addGenre(Genre genre) {
+		if(genreList==null) {
+			genreList = new ArrayList<Genre>();
+		}
+		if(!genreList.contains(genre)) {
+			genreList.add(genre);
+		}
+	}
+	
+	public void addGenre(Genre...genres) {
+		for(Genre genre : genres) {
+			this.addGenre(genre);
+		}
+	}
 
 
 	public List<Plattform> getPlattformList() {

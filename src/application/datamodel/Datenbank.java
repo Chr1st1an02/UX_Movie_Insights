@@ -43,7 +43,7 @@ public class Datenbank {
 	public List<Film> getFilme(Genre genre){
 		List<Film> genreList = new ArrayList<Film>();
 		for(Film film : filme) {
-			if(film.getGenre().equals(genre)) {
+			if(film.getGenreList().contains(genre)) {
 				genreList.add(film);
 			}
 		}
