@@ -29,7 +29,7 @@ public class MainController implements Initializable {
 			mainBorderPane.setTop(navigation);
 			
 		//CENTER
-			GridPane home = FXMLLoader.load(getClass().getResource("/application/home/HomeGUI.fxml"));
+			ScrollPane home = FXMLLoader.load(getClass().getResource("/application/home/HomeGUI.fxml"));
 			mainBorderPane.setCenter(home);
 		
 		} catch (IOException e) {
