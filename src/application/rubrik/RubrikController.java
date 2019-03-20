@@ -29,7 +29,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
-public class RubrikController implements Observer, Initializable{
+public class RubrikController implements  Initializable{
 
 	private Genre genre;
 	private List<Film> filme;
@@ -49,7 +49,6 @@ public class RubrikController implements Observer, Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		RubrikWidthListener rubrikPaneSizeListener = new RubrikWidthListener(); 
 		rubrikPane.widthProperty().addListener(rubrikPaneSizeListener);
-		Filter.getFilter().addObserver(this);
 		
 		
 	}
@@ -107,13 +106,7 @@ public class RubrikController implements Observer, Initializable{
     	lblRubrikTitle.setText(title);
     }
 
-	@Override
-	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		System.out.println("upgrade");
-		getFilme();
-		showFilme();
-	}
+	
 	
 	private void getFilme() {
 		filme = Filter.getFilter().getListe(genre);
