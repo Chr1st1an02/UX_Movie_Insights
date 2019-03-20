@@ -1,6 +1,8 @@
 package application.datamodel;
 
-public class Genre {
+import application.menu.filter.Filterbar;
+
+public class Genre implements Filterbar{
 	private String name;
 	
 	public Genre(String name){

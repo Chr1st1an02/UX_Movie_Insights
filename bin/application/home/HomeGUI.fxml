@@ -64,4 +64,4 @@
             <ImageView fitHeight="150.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
         	 -->
          </children>
-      </GridPane>
+</GridPane>

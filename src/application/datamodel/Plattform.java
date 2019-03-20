@@ -1,6 +1,8 @@
 package application.datamodel;
 
-public class Plattform {
+import application.menu.filter.Filterbar;
+
+public class Plattform implements Filterbar{
 	private String name;
 
 	public Plattform(String name) {

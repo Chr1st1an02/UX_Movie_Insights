@@ -4,14 +4,19 @@ import java.awt.print.Pageable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageTypeSpecifier;
+
+import com.sun.glass.ui.TouchInputSupport;
 
 import application.datamodel.Datenbank;
 import application.datamodel.Film;
 import application.datamodel.Genre;
 import application.filmcard.FilmCardController;
+import application.filter.Filter;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -24,7 +29,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
-public class RubrikController implements Initializable{
+public class RubrikController implements Observer, Initializable{
 
 	private Genre genre;
 	private List<Film> filme;
@@ -43,9 +48,12 @@ public class RubrikController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		RubrikWidthListener rubrikPaneSizeListener = new RubrikWidthListener(); 
-	    
 		rubrikPane.widthProperty().addListener(rubrikPaneSizeListener);
+		Filter.getFilter().addObserver(this);
+		
+		
 	}
+	
 	
 	class RubrikWidthListener implements ChangeListener<Number> {
 
@@ -62,7 +70,7 @@ public class RubrikController implements Initializable{
 	private void showFilme(){
 		try {
 			filmeGrid.getChildren().clear();
-			for(int i=page*filmePerPage; i<page*filmePerPage+filmePerPage && i<filme.size(); i++) {
+			for(int i=page*filmePerPage; i<page*filmePerPage+filmePerPage+1 && i<filme.size(); i++) {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/filmcard/FilmCardGUI.fxml"));
 				BorderPane filmCard = fxmlLoader.load();
 				FilmCardController filmCardController = fxmlLoader.getController();
@@ -92,12 +100,28 @@ public class RubrikController implements Initializable{
     public void setGenre(Genre genre) {
     	this.genre = genre;
     	this.setTitle(genre.getName());
-    	filme = Datenbank.getDatenbank().getFilme(genre);
+    	getFilme();
     }
     
     private void setTitle(String title) {
     	lblRubrikTitle.setText(title);
     }
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		System.out.println("upgrade");
+		getFilme();
+		showFilme();
+	}
+	
+	private void getFilme() {
+		filme = Filter.getFilter().getListe(genre);
+	}
+
+    
+	
+ 
     
     
 

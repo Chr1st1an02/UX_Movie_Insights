@@ -40,23 +40,28 @@ public class Datenbank {
 		return filme.get(index);
 	}
 	
-	public List<Film> getFilme(Genre genre){
-		List<Film> genreList = new ArrayList<Film>();
-		for(Film film : filme) {
-			if(film.getGenreList().contains(genre)) {
-				genreList.add(film);
-			}
-		}
-		return genreList;
+	public List<Film> getFilme(){
+		return filme;
 	}
+	
 	
 	public Genre getGenre(int index) {
 		return genres.get(index);
 	}
 	
+	public List<Genre> getGenreList(){
+		return genres;
+	}
+	
 	public Plattform getPlattform(int index) {
 		return plattforms.get(index);
 	}
+	
+	public List<Plattform> getPlattformList() {
+		return plattforms;
+	}
+	
+	
 
 	
 }

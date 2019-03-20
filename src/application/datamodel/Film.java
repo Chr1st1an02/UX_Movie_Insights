@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.sun.glass.ui.PlatformFactory;
 
+import application.menu.filter.Filterbar;
 import javafx.scene.shape.Path;
 
 public class Film {
@@ -109,6 +110,12 @@ public class Film {
 		if(!plattformList.contains(p)) {
 			plattformList.add(p);
 		}
+	}
+	
+	public boolean contains(Filterbar filter) {
+		return (genreList.contains(filter) ||
+				plattformList.contains(filter));
+		
 	}
 	
 	
