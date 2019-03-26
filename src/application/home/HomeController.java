@@ -31,10 +31,10 @@ public class HomeController implements  Observer, Initializable{
 		try {
 			
 			BorderPane search = FXMLLoader.load(getClass().getResource("/application/search/SearchGUI.fxml"));
-			homeGrid.getChildren().add(search);
+			homeGrid.add(search,0,0);
 			
-			ImageView banner = FXMLLoader.load(getClass().getResource("/application/banner/bannerGUI.fxml"));
-			homeGrid.getChildren().add(banner);
+			BorderPane banner = FXMLLoader.load(getClass().getResource("/application/banner/bannerGUI.fxml"));
+			homeGrid.add(banner,0,1);
 			
 			//Datenbank datenbank = Datenbank.getDatenbank();
 			//FilmRubrike Laden

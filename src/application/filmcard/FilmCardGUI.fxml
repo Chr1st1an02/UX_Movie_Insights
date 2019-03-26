@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="130.0" maxWidth="90.0" minHeight="130.0" minWidth="90.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
+<BorderPane maxHeight="130.0" maxWidth="90.0" minHeight="130.0" minWidth="90.0" style="-fx-background-color: #6B6E70;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
+   <top>
+      <Label fx:id="lblTitel" style="-fx-text-fill: #86C232;" text="Label" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+   </top>
    <bottom>
-      <Label fx:id="lblTitel" text="Label" BorderPane.alignment="CENTER" />
+   		<Button mnemonicParsing="false" onAction="#addToList" styleClass="menuIcon" BorderPane.alignment="CENTER">
+     		<graphic>
+            	<ImageView accessibleHelp="Add to List" accessibleRole="BUTTON" accessibleText="Add to List" fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               		<image>
+                  		<Image url="@../images/icons8-romance-96.png" />
+               		</image>
+            	</ImageView>
+         	</graphic>
+         <tooltip>
+            <Tooltip text="Add to List" />
+         </tooltip>
+     	</Button>
    </bottom>
 </BorderPane>

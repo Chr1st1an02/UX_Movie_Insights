@@ -4,17 +4,26 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.image.Image;
+
 public class Datenbank {
 	private static Datenbank datenbank;
 	
 	private List<Film> filme;
 	private List<Genre> genres;
 	private List<Plattform> plattforms;
+	private List<Image> bannerImages;
+	
+	private Genre myList;
 	
 	private Datenbank() {
 		filme = new ArrayList<Film>();
 		genres = new ArrayList<Genre>();
 		plattforms = new ArrayList<Plattform>();
+		bannerImages = new ArrayList<Image>();
+		
+		myList = new Genre("My List");
+		genres.add(myList);
 	}
 	
 	public static Datenbank getDatenbank() {
@@ -59,6 +68,18 @@ public class Datenbank {
 	
 	public List<Plattform> getPlattformList() {
 		return plattforms;
+	}
+
+	public List<Image> getBannerImages() {
+		return bannerImages;
+	}
+	
+	public void addBannerImages(Image bannerImage) {
+		this.bannerImages.add(bannerImage);
+	}
+	
+	public Genre getMyLst() {
+		return myList;
 	}
 	
 	

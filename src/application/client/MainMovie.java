@@ -1,6 +1,8 @@
 package application.client;
 	
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import application.datamodel.Datenbank;
 import application.datamodel.Film;
@@ -10,6 +12,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -25,6 +28,8 @@ public class MainMovie extends Application {
 		try {
 			StackPane root = FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
 			Scene scene = new Scene(root,800,400);
+			primaryStage.setFullScreen(true);
+			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
@@ -55,6 +60,13 @@ public class MainMovie extends Application {
 		 datenbank.addGenre(komoedie);
 		 datenbank.addGenre(kinder);
 		 datenbank.addGenre(doku);
+		 
+		 Image bannerImage0 = new Image("/application/images/banner0.jpeg");
+		 datenbank.addBannerImages(bannerImage0);
+		 Image bannerImage1 = new Image("/application/images/banner1.jpg");
+		 datenbank.addBannerImages(bannerImage1);
+		 Image bannerImage2 = new Image("/application/images/banner2.jpg");
+		 datenbank.addBannerImages(bannerImage2);
 		 
 		 for(int i =0; i<20 ; i++) {
 			 //Alle Plattformen

@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.omg.CORBA.PRIVATE_MEMBER;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,16 +16,19 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class MainController implements Initializable {
 
     @FXML
     private BorderPane mainBorderPane;
+    
+    @FXML
+    private StackPane mainStackPane;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("Main Initializable");
 		try {
 			
 		//TOP
