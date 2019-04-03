@@ -24,10 +24,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.StackPaneBuilder;
 
 public class RubrikController implements  Initializable{
 
@@ -71,7 +74,7 @@ public class RubrikController implements  Initializable{
 			filmeGrid.getChildren().clear();
 			for(int i=page*filmePerPage; i<page*filmePerPage+filmePerPage+1 && i<filme.size(); i++) {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/filmcard/FilmCardGUI.fxml"));
-				BorderPane filmCard = fxmlLoader.load();
+				StackPane filmCard = fxmlLoader.load();
 				FilmCardController filmCardController = fxmlLoader.getController();
 				filmCardController.setFilm(filme.get(i));
 				filmeGrid.getChildren().add(filmCard);

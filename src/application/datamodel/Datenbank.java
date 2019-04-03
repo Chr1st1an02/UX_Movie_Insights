@@ -13,6 +13,7 @@ public class Datenbank {
 	private List<Genre> genres;
 	private List<Plattform> plattforms;
 	private List<Image> bannerImages;
+	private List<Image> filmCardImages;
 	
 	private Genre myList;
 	
@@ -21,6 +22,7 @@ public class Datenbank {
 		genres = new ArrayList<Genre>();
 		plattforms = new ArrayList<Plattform>();
 		bannerImages = new ArrayList<Image>();
+		filmCardImages = new ArrayList<Image>();
 		
 		myList = new Genre("My List");
 		genres.add(myList);
@@ -74,8 +76,16 @@ public class Datenbank {
 		return bannerImages;
 	}
 	
+	public List<Image> getFilmCardImages() {
+		return filmCardImages;
+	}
+	
 	public void addBannerImages(Image bannerImage) {
 		this.bannerImages.add(bannerImage);
+	}
+	
+	public void addFilmCardImages(Image filmCardImage) {
+		this.filmCardImages.add(filmCardImage);
 	}
 	
 	public Genre getMyLst() {

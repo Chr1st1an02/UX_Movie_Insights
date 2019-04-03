@@ -68,6 +68,11 @@ public class MainMovie extends Application {
 		 Image bannerImage2 = new Image("/application/images/banner2.jpg");
 		 datenbank.addBannerImages(bannerImage2);
 		 
+		 for(int i=0;i<2;i++) {
+			 Image filmCardImage = new Image("/application/images/film"+i+".jpg");
+			 datenbank.addFilmCardImages(filmCardImage);
+		 }
+		 
 		 for(int i =0; i<20 ; i++) {
 			 //Alle Plattformen
 			 datenbank.addFilm(new Film("Horrorfilm Alle"+i, "Horrorfilm auf Netflix, Amazon, Maxdown", 102, 18, horror, netflix, amazon, maxdown ));
