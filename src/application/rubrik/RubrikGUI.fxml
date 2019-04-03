@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.control.Tooltip?>
 
-
-
-<BorderPane id="rubrikPane" fx:id="rubrikPane" style="-fx-background-color: #222629;" maxHeight="160.0" maxWidth="1.7976931348623157E308" minHeight="160.0" minWidth="400.0" prefHeight="160.0" prefWidth="517.0" styleClass="rubrikPane" GridPane.rowIndex="2" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rubrik.RubrikController">
+<BorderPane id="rubrikPane" fx:id="rubrikPane" maxHeight="160.0" maxWidth="1.7976931348623157E308" minHeight="160.0" minWidth="400.0" prefHeight="160.0" prefWidth="517.0" style="-fx-background-color: #222629;" styleClass="rubrikPane" GridPane.rowIndex="2" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rubrik.RubrikController">
                <top>
                   <Label fx:id="lblRubrikTitle" style="-fx-text-fill: #61892F;" text="Title" BorderPane.alignment="CENTER">
          <font>
@@ -23,39 +19,35 @@
                </top>
                <center>
                   <!-- <GridPane fx:id="filmeGrid" BorderPane.alignment="CENTER"> -->
-                  <HBox fx:id="filmeGrid" styleClass="rubrikBox" BorderPane.alignment="CENTER_LEFT">
-                     <children>
-                     </children>
-                  </HBox>
+                  <HBox fx:id="filmeGrid" styleClass="rubrikBox" BorderPane.alignment="CENTER_LEFT" />
                   <!-- </GridPane> -->
                </center>
-               <right>
-                  
-                  <Button styleClass="menuIcon" mnemonicParsing="false" onAction="#nextPage" BorderPane.alignment="CENTER">
-			     	<graphic>
+   <right>
+      <JFXButton onAction="#nextPage" style="-jfx-button-type: RAISED;" text="" BorderPane.alignment="CENTER">
+         <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
 			                  <Image url="@../images/icons8-more-than-52.png" />
 			               </image>
 			            </ImageView>
-			         </graphic>
-			         <tooltip>
+         </graphic>
+         <tooltip>
 			            <Tooltip text="Nächste Seite" />
-			         </tooltip>
-			     </Button>
-               </right>
+         </tooltip>
+      </JFXButton>
+   </right>
    <left>
-      <Button styleClass="menuIcon" mnemonicParsing="false" onAction="#prevPage"  BorderPane.alignment="CENTER">
-			     	<graphic>
+      <JFXButton onAction="#prevPage" style="-jfx-button-type: RAISED;" text="" BorderPane.alignment="CENTER">
+         <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
 			                  <Image url="@../images/icons8-less-than-52.png" />
 			               </image>
 			            </ImageView>
-			         </graphic>
-			         <tooltip>
+         </graphic>
+         <tooltip>
 			            <Tooltip text="Vorherige Seite" />
-			         </tooltip>
-			     </Button>
+         </tooltip>
+      </JFXButton>
    </left>
             </BorderPane>

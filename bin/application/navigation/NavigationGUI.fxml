@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.Tooltip?>
-
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -13,7 +13,7 @@
 <BorderPane prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.navigation.NavigationController">
    <right>
   		<HBox>
-     <Button id="vorgemerkt" mnemonicParsing="false" onAction="#onVorgemerktClicked" styleClass="menuIcon" BorderPane.alignment="CENTER">
+     <JFXButton id="vorgemerkt" mnemonicParsing="false" style="-jfx-button-type: RAISED;" onAction="#onVorgemerktClicked" styleClass="menuIcon" BorderPane.alignment="CENTER">
      	<graphic>
             <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -24,8 +24,8 @@
          <tooltip>
             <Tooltip text="DeadEnd für die vorgemerkte Liste" />
          </tooltip>
-     </Button>
-     <Button id="einstellungen" mnemonicParsing="false" styleClass="menuIcon" BorderPane.alignment="CENTER">
+     </JFXButton>
+     <JFXButton id="einstellungen" mnemonicParsing="false" style="-jfx-button-type: RAISED;" styleClass="menuIcon" BorderPane.alignment="CENTER">
      	<graphic>
             <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,12 +36,12 @@
          <tooltip>
             <Tooltip text="DeadEnd für die Einstellungen" />
          </tooltip>
-     </Button>
+     </JFXButton>
      </HBox>
      
    </right>
    <left>
-     <Button mnemonicParsing="false" onAction="#onMenuClicked" styleClass="menuIcon" BorderPane.alignment="CENTER">
+     <JFXButton mnemonicParsing="false" onAction="#onMenuClicked" style="-jfx-button-type: RAISED;" styleClass="menuIcon" BorderPane.alignment="CENTER">
      <graphic>
             <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -52,7 +52,7 @@
          <tooltip>
             <Tooltip text="Menu" />
          </tooltip>
-     </Button>
+     </JFXButton>
    </left>
    <center>
       <Label style="-fx-text-fill: #6B6E70;" text="MovieInsight" BorderPane.alignment="CENTER">
