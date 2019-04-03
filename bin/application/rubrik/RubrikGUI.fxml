@@ -10,9 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-
-<BorderPane id="rubrikPane" fx:id="rubrikPane" style="-fx-background-color: #000000;" maxHeight="160.0" maxWidth="1.7976931348623157E308" minHeight="160.0" minWidth="400.0" prefHeight="160.0" prefWidth="517.0" styleClass="rubrikPane" GridPane.rowIndex="2" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rubrik.RubrikController">
 <BorderPane id="rubrikPane" fx:id="rubrikPane" maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="400.0" prefHeight="200.0" prefWidth="517.0" style="-fx-background-color: #222629;" styleClass="rubrikPane" GridPane.rowIndex="2" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rubrik.RubrikController">
                <top>
                   <Label fx:id="lblRubrikTitle" style="-fx-text-fill: #61892F;" text="Title" BorderPane.alignment="CENTER">

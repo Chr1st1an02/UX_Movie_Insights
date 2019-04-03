@@ -31,6 +31,7 @@ public class MainMovie extends Application {
 			primaryStage.setFullScreen(true);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("ScrollPane.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
 			primaryStage.show();
