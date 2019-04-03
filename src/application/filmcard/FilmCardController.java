@@ -1,10 +1,12 @@
 package application.filmcard;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import application.datamodel.Datenbank;
 import application.datamodel.Film;
+import application.datamodel.Genre;
 import application.filter.Filter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +41,14 @@ public class FilmCardController implements Initializable {
     
 	 @FXML
 	 void addToList(ActionEvent event) {
-		 film.addGenre(Datenbank.getDatenbank().getMyLst());
+		 Datenbank datenbank = Datenbank.getDatenbank();
+		 Genre myList = datenbank.getMyList();
+		 List<Genre> genreList = film.getGenreList();
+		 if(genreList.contains(myList)) {
+			 genreList.remove(myList);
+		 }else {
+			 genreList.add(myList);
+		 }
 		 Filter.getFilter().upgradeList();
 		 
 		 

@@ -88,7 +88,7 @@ public class Datenbank {
 		this.filmCardImages.add(filmCardImage);
 	}
 	
-	public Genre getMyLst() {
+	public Genre getMyList() {
 		return myList;
 	}
 	

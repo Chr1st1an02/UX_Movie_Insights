@@ -65,12 +65,14 @@ public class HomeController implements  Observer, Initializable{
 	private void ladeRubrike() throws IOException {
 		Filter filter = Filter.getFilter();
 		for(int i=0 ; i<filter.getGenres().size();i++) {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/rubrik/RubrikGUI.fxml"));
-			BorderPane rubrik= loader.load();
-			RubrikController rubrikController = loader.getController();
-			rubrikController.setGenre(filter.getGenres().get(i));
-			//homeGrid.add(rubrik,0,);
-			homeGrid.addRow(i+2, rubrik);
+			if(Filter.getFilter().getListe(filter.getGenres().get(i)).size()!=0) {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/rubrik/RubrikGUI.fxml"));
+				BorderPane rubrik= loader.load();
+				RubrikController rubrikController = loader.getController();
+				rubrikController.setGenre(filter.getGenres().get(i));
+				//homeGrid.add(rubrik,0,);
+				homeGrid.addRow(i+2, rubrik);
+			}
 		}
 	}
     
