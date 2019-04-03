@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="130.0" maxWidth="90.0" minHeight="130.0" minWidth="90.0" style="-fx-background-color: #6B6E70;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
+<BorderPane maxHeight="173.0" maxWidth="120.0" minHeight="173.0" minWidth="120.0" style="-fx-background-color: #6B6E70;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
    <top>
       <Label fx:id="lblTitel" style="-fx-text-fill: #86C232;" text="Label" BorderPane.alignment="CENTER">
          <font>

@@ -71,7 +71,6 @@ public class HomeController implements  Observer, Initializable{
 			rubrikController.setGenre(filter.getGenres().get(i));
 			//homeGrid.add(rubrik,0,);
 			homeGrid.addRow(i+2, rubrik);
-			System.out.println(filter.getGenres().get(i).getName());
 		}
 	}
     

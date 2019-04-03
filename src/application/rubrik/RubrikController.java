@@ -58,7 +58,7 @@ public class RubrikController implements  Initializable{
 
 		@Override
 		public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-			int filmePerPageNeu = (int)((rubrikPane.getWidth()-100)/100);
+			int filmePerPageNeu = (int)((rubrikPane.getWidth()-100)/130);
 			page= page*filmePerPage/filmePerPageNeu;
 			filmePerPage = filmePerPageNeu;
 			showFilme();
