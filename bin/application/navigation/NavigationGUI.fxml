@@ -55,7 +55,7 @@
      </JFXButton>
    </left>
    <center>
-      <Label style="-fx-text-fill: #86C232;" text="MOVIE INSIGHT" textFill="#88c232" BorderPane.alignment="CENTER">
+      <Label style="-fx-text-fill: #86C232;" text="MOVIE INSIGHTS" textFill="#88c232" BorderPane.alignment="CENTER">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="96.0" />
          </font>

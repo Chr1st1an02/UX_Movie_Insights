@@ -2,6 +2,8 @@ package application.navigation;
 
 import java.io.IOException;
 
+import com.jfoenix.controls.JFXDrawer;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +20,8 @@ public class NavigationController {
 	  @FXML
 	  void onMenuClicked(ActionEvent event) {
 		  try {
+			  
+			
 			BorderPane menu = FXMLLoader.load(getClass().getResource("/application/menu/MenuGUI.fxml"));
 			StackPane root = (StackPane)((Node)event.getSource()).getScene().getRoot();
 			 

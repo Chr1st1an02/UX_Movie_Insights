@@ -76,7 +76,7 @@ public class MainMovie extends Application {
 		 for(int i =0; i<20 ; i++) {
 			 //Alle Plattformen
 			 datenbank.addFilm(new Film("Horrorfilm Alle"+i, "Horrorfilm auf Netflix, Amazon, Maxdown", 102, 18, horror, netflix, amazon, maxdown ));
-			 datenbank.addFilm(new Film("Doku Alle"+i, "Doku auf Netflix, Amazon, Maxdown", 102, 18, doku, netflix, amazon, maxdown ));
+			 datenbank.addFilm(new Film("James Bond"+i, "James Bond, Agent 007, ist ein Geheimagent, der für den MI6 arbeitet.", 102, 18, doku, netflix, amazon, maxdown ));
 			 datenbank.addFilm(new Film("Kinder Alle"+i, "Kinder auf Netflix, Amazon, Maxdown", 102, 18, kinder, netflix, amazon, maxdown ));
 			 datenbank.addFilm(new Film("Komödie Alle"+i, "Komödie auf Netflix, Amazon, Maxdown", 102, 18, komoedie, netflix, amazon, maxdown ));
 			 
