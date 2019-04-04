@@ -14,7 +14,7 @@
       <ImageView fx:id="filmCardImage" fitHeight="163.0" fitWidth="120.0" onMouseClicked="#onMovie" pickOnBounds="true" preserveRatio="true" />
       <BorderPane maxHeight="173.0" maxWidth="120.0" minHeight="173.0" minWidth="120.0" style="-fx-background-color: transparent;">
          <top>
-            <Label fx:id="lblTitel" style="-fx-text-fill: #86C232;" text="Label" BorderPane.alignment="CENTER">
+            <Label fx:id="lblTitel" style="-fx-text-fill: #86C232; -fx-label-padding: 5;" text="Label" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
