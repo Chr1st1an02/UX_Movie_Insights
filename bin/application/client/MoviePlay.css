@@ -1,6 +1,12 @@
 .movieButton:hover{
 	
--fx-background-color: rgba(255,255,255,0.5);
+-fx-background-color: rgba(255, 255, 255,0.25);
 -fx-text-fill: #86c232;
 
+}
+
+.movieButton{
+	
+-fx-background-color: rgba(255,255,255,0.15);	
+	
 }

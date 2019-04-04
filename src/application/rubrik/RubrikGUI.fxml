@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
@@ -23,7 +23,7 @@
                   <!-- </GridPane> -->
                </center>
    <right>
-      <JFXButton onAction="#nextPage" style="-jfx-button-type: RAISED; -fx-background-radius: 50px; -fx-background-color: #86C232AF;" text="" BorderPane.alignment="CENTER">
+      <Button onAction="#nextPage" styleClass="rubrikButton" text="" BorderPane.alignment="CENTER">
          <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
@@ -34,10 +34,10 @@
          <tooltip>
 			            <Tooltip text="Nächste Seite" />
          </tooltip>
-      </JFXButton>
+      </Button>
    </right>
    <left>
-      <JFXButton onAction="#prevPage" style="-jfx-button-type: RAISED;-fx-background-radius: 50px; -fx-background-color:  #86C232AF;" text="" BorderPane.alignment="CENTER">
+      <Button onAction="#prevPage" styleClass="rubrikButton" text="" BorderPane.alignment="CENTER">
          <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
@@ -48,6 +48,6 @@
          <tooltip>
 			            <Tooltip text="Vorherige Seite" />
          </tooltip>
-      </JFXButton>
+      </Button>
    </left>
             </BorderPane>

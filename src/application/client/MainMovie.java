@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -33,6 +34,7 @@ public class MainMovie extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			scene.getStylesheets().add(getClass().getResource("ScrollPane.css").toExternalForm());
 			scene.getStylesheets().add(getClass().getResource("MoviePlay.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("Rubrik.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
 			primaryStage.show();

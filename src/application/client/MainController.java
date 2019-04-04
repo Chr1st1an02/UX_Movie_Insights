@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 
+import com.jfoenix.controls.JFXDrawer;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -38,6 +40,7 @@ public class MainController implements Initializable {
 		//CENTER
 			ScrollPane home = FXMLLoader.load(getClass().getResource("/application/home/HomeGUI.fxml"));
 			mainBorderPane.setCenter(home);
+			
 		
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -1,0 +1,22 @@
+.rubrikButton:hover{
+	
+
+-fx-background-color: #61892F;
+
+}
+
+
+.rubrikButton:pressed{
+	
+
+-fx-background-color: #86c232;
+
+}
+
+
+.rubrikButton{
+	
+-fx-text-fill: white;	
+-fx-background-color: rgba(255,255,255,0.6);
+	
+}
