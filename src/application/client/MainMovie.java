@@ -26,7 +26,7 @@ public class MainMovie extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {
-			StackPane root = FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
+			StackPane root = FXMLLoader.load(getClass().getResource("/application/client/MainGUI.fxml"));
 			Scene scene = new Scene(root,800,400);
 			primaryStage.setFullScreen(true);
 			

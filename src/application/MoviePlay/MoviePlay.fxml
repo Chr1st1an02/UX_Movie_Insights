@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MoviePlay.MovieController">
+   <children>
+      <MediaView fx:id="mediaView" fitHeight="2000" fitWidth="2000" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <JFXButton fx:id="Playbutton" onAction="#onClick" style="-fx-background-color: transparent;" text="►" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </JFXButton>
+         </center>
+         <top>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <left>
+                  <JFXButton onAction="#onBackButton" text="🢀" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     </JFXButton>
+               </left>
+            </BorderPane>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>

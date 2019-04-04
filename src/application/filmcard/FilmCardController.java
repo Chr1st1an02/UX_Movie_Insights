@@ -1,5 +1,6 @@
 package application.filmcard;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -10,9 +11,13 @@ import application.datamodel.Genre;
 import application.filter.Filter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 
 public class FilmCardController implements Initializable {
 
@@ -52,6 +57,15 @@ public class FilmCardController implements Initializable {
 		 Filter.getFilter().upgradeList();
 		 
 		 
+	 }
+	 
+	 @FXML
+	 public void onMovie(MouseEvent event) throws IOException {
+		 
+		 StackPane root = FXMLLoader.load(getClass().getResource("/application/MoviePlay/MoviePlay.fxml"));
+			
+		 ((Node)event.getSource()).getScene().setRoot(root);
+			 
 	 }
     
     
