@@ -16,6 +16,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -29,10 +31,18 @@ public class FilmCardController implements Initializable {
 	
     @FXML
     private Label lblTitel;
+    
+    @FXML
+    private Tooltip tooltip;
+    @FXML 
+    private ImageView buttonImageView;
+    
+    private Datenbank datenbank;
+    
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		lblTitel.setText("Hier ist ein Titel");
+		datenbank = Datenbank.getDatenbank();
 	}
     
 	public void setTitle(String title) {
@@ -42,7 +52,13 @@ public class FilmCardController implements Initializable {
 	public void setFilm(Film film) {
 		this.film = film;
 		setTitle(film.getTitle());
-		filmCardImage.setImage(Datenbank.getDatenbank().getFilmCardImages().get(0));
+		filmCardImage.setImage(datenbank.getFilmCardImages().get(0));
+		
+		if(film.getGenreList().contains(datenbank.getMyList())) {
+			tooltip.setText("Aus MyList entfernen");
+			buttonImageView.setAccessibleHelp("Aus MyList entfernen");
+			buttonImageView.setImage(new Image("/application/images/icons8-broken-heart-52.png"));
+		}
 	}
     
 	 @FXML

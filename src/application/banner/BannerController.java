@@ -42,7 +42,6 @@ public class BannerController implements Initializable{
 		imageView.setImage(images.get(0));
 		
 		Timer timer = new Timer(5000, new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				bildId= ++bildId%images.size();
