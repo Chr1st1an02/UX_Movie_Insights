@@ -1,0 +1,40 @@
+.scroll-bar{
+ -fx-background-color: rgb(0,0,0);
+ -fx-background-radius: 2em;
+ -fx-pref-width: 17;
+-fx-padding: 3;
+}
+
+.scroll-bar:vertical .track {
+ -fx-background-color: transparent; 
+}
+.scroll-bar:vertical .track-background
+ {
+ -fx-background-color: transparent;
+ 
+}
+.scroll-bar:vertical .thumb {
+ -fx-background-color: #6B6E70;
+ 
+}
+
+
+.scroll-bar:vertical .thumb:hover {
+ -fx-background-color: #61892F;
+}
+
+
+.scroll-bar:vertical .thumb:pressed {
+ -fx-background-color: #86C232;
+}
+
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button,.scroll-bar:vertical .increment-arrow,.scroll-bar:vertical .decrement-arrow {
+   visibility:hidden;
+   
+}
+
+
+.scroll-bar:vertical:focused
+{
+ -fx-background-color: transparent,#86C232,#86C232;
+}
