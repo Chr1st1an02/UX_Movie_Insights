@@ -1,10 +1,14 @@
 package application.banner;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.ServiceLoader;
+
+import javax.swing.Timer;
 
 import application.datamodel.Datenbank;
 import javafx.beans.value.ChangeListener;
@@ -21,41 +25,31 @@ public class BannerController implements Initializable{
 	   @FXML
 	    private BorderPane banner;
 
-	    @FXML
-	    private Slider slider;
 
 	    @FXML
 	    private ImageView imageView;
 	    
-	    @FXML
-	    private ImageView imageViewL;
-
-	    @FXML
-	    private ImageView imageViewR;
+	    private int bildId =0;
+	    
 	    
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		images = Datenbank.getDatenbank().getBannerImages();
 		// TODO Auto-generated method stub
 		
-		slider.setMax(images.size()-0.001);
+		
 		imageView.setImage(images.get(0));
-		imageViewR.setImage(images.get(1));
-		slider.valueProperty().addListener(new ChangeListener<Number>() {
+		
+		Timer timer = new Timer(5000, new ActionListener() {
+			
 			@Override
-			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
-				int bildId = arg0.getValue().intValue();
+			public void actionPerformed(ActionEvent e) {
+				bildId= ++bildId%images.size();
 				imageView.setImage(images.get(bildId));
-				if(bildId>0)
-					imageViewL.setImage(images.get(bildId-1));
-				else
-					imageViewL.setImage(null);
-				if(bildId<images.size()-1)
-					imageViewR.setImage(images.get(bildId+1));
-				else
-					imageViewR.setImage(null);
 			}
-          });
+		});
+		timer.start();
+		
 		
 		
 	}

@@ -62,12 +62,10 @@ public class MainMovie extends Application {
 		 datenbank.addGenre(kinder);
 		 datenbank.addGenre(doku);
 		 
-		 Image bannerImage0 = new Image("/application/images/banner0.jpeg");
-		 datenbank.addBannerImages(bannerImage0);
-		 Image bannerImage1 = new Image("/application/images/banner1.jpg");
-		 datenbank.addBannerImages(bannerImage1);
-		 Image bannerImage2 = new Image("/application/images/banner2.jpg");
-		 datenbank.addBannerImages(bannerImage2);
+		 for(int i=0; i<3;i++) {
+			 Image bannerImage = new Image("/application/images/banner"+i+".jpg");
+			 datenbank.addBannerImages(bannerImage);
+		 }
 		 
 		 for(int i=0;i<2;i++) {
 			 Image filmCardImage = new Image("/application/images/film"+i+".jpg");
