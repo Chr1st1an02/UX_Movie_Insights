@@ -16,7 +16,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
@@ -34,6 +36,13 @@ public class MovieController implements Initializable {
 	
 	@FXML
 	private JFXButton Playbutton;
+	
+	@FXML
+	private VBox lables;
+
+	
+	@FXML
+	private BorderPane borderPane;
 	
 	private MediaPlayer mediaPlayer;
 	
@@ -70,13 +79,17 @@ public class MovieController implements Initializable {
 	@FXML
 	public void onClick(ActionEvent event) {
 		
+		
+		
 		if(mediaPlayer.getStatus().equals(Status.PLAYING)) {
 			mediaPlayer.pause();
 			Playbutton.setText("►");
+			borderPane.setBottom(null);
 			}
 		else {
 			mediaPlayer.play();
 			Playbutton.setText("| |");
+			borderPane.setBottom(lables);
 		}
 		
 	}

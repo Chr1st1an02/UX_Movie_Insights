@@ -12,7 +12,7 @@
 <StackPane style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MoviePlay.MovieController">
    <children>
       <MediaView fx:id="mediaView" fitHeight="2000" fitWidth="2000" />
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
          <center>
             <JFXButton fx:id="Playbutton" onAction="#onClick" style="-fx-background-color: transparent;" text="►" BorderPane.alignment="CENTER">
                <font>
@@ -32,7 +32,7 @@
             </BorderPane>
          </top>
          <bottom>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox fx:id="labels" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="la_title" alignment="CENTER" text="Titel" />
                   <Label fx:id="la_description" alignment="CENTER" text="Description" />
