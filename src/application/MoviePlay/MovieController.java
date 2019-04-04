@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import application.datamodel.Film;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,7 @@ public class MovieController implements Initializable {
 	private JFXButton Playbutton;
 	
 	private MediaPlayer mediaPlayer;
+	private Film film;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -67,6 +69,10 @@ public class MovieController implements Initializable {
 		
 		
 		
+	}
+	
+	public void setMovie(Film film) {
+		this.film= film;
 	}
 
 }

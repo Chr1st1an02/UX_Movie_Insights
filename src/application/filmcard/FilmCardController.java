@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import application.MoviePlay.MovieController;
 import application.datamodel.Datenbank;
 import application.datamodel.Film;
 import application.datamodel.Genre;
@@ -62,8 +63,10 @@ public class FilmCardController implements Initializable {
 	 @FXML
 	 public void onMovie(MouseEvent event) throws IOException {
 		 
-		 StackPane root = FXMLLoader.load(getClass().getResource("/application/MoviePlay/MoviePlay.fxml"));
-			
+		 FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/MoviePlay/MoviePlay.fxml"));
+		 StackPane root = loader.load();
+		 MovieController movieController = loader.getController();
+		 movieController.setMovie(film);
 		 ((Node)event.getSource()).getScene().setRoot(root);
 			 
 	 }
