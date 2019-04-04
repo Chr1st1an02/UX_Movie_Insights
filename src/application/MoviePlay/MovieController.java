@@ -38,7 +38,7 @@ public class MovieController implements Initializable {
 	private JFXButton Playbutton;
 	
 	@FXML
-	private VBox lables;
+	private VBox labels;
 
 	
 	@FXML
@@ -74,6 +74,8 @@ public class MovieController implements Initializable {
 		mediaView.setMediaPlayer(mediaPlayer);
 		
 		
+		
+		
 	}
 	
 	@FXML
@@ -84,12 +86,12 @@ public class MovieController implements Initializable {
 		if(mediaPlayer.getStatus().equals(Status.PLAYING)) {
 			mediaPlayer.pause();
 			Playbutton.setText("►");
-			borderPane.setBottom(null);
+			labels.setVisible(true);
 			}
 		else {
 			mediaPlayer.play();
 			Playbutton.setText("| |");
-			borderPane.setBottom(lables);
+			labels.setVisible(false);
 		}
 		
 	}
@@ -145,6 +147,8 @@ public class MovieController implements Initializable {
 		plattformLabel = plattformLabel + plattforms.get(plattforms.size()-1).getName();
 		
 		la_plattform.setText(plattformLabel);
+		
+		
 		
 	}
 
