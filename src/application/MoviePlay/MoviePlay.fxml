@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
@@ -28,6 +31,22 @@
                </left>
             </BorderPane>
          </top>
+         <bottom>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="la_title" alignment="CENTER" text="Titel" />
+                  <Label fx:id="la_description" alignment="CENTER" text="Description" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="la_duration" text="Dauration" />
+                        <Label fx:id="la_fsk" text="FSK" />
+                        <Label fx:id="la_genre" text="Genre" />
+                        <Label fx:id="la_plattform" text="Plattforms" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
       </BorderPane>
    </children>
 </StackPane>

@@ -67,6 +67,7 @@ public class FilmCardController implements Initializable {
 		 StackPane root = loader.load();
 		 MovieController movieController = loader.getController();
 		 movieController.setMovie(film);
+		 movieController.setLables();
 		 ((Node)event.getSource()).getScene().setRoot(root);
 			 
 	 }
