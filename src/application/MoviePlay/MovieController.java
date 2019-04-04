@@ -1,9 +1,12 @@
 package application.MoviePlay;
 
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javax.swing.Timer;
 
 import com.jfoenix.controls.JFXButton;
 
@@ -34,8 +37,7 @@ public class MovieController implements Initializable {
 	@FXML
 	private MediaView mediaView;
 	
-	@FXML
-	private JFXButton Playbutton;
+	
 	
 	@FXML
 	private VBox labels;
@@ -60,6 +62,12 @@ public class MovieController implements Initializable {
 	private Label la_genre;
 	@FXML
 	private Label la_plattform;
+	@FXML
+	private JFXButton playbutton;
+	@FXML
+	private JFXButton backbutton;
+	
+	Timer buttonHideTimer; 
 	
 	
 	
@@ -75,6 +83,18 @@ public class MovieController implements Initializable {
 		
 		
 		
+		//Timer für Playbutton ausblenden
+		buttonHideTimer = new Timer(3000, new ActionListener() {               
+			@Override
+			public void actionPerformed(java.awt.event.ActionEvent arg0) {
+				
+	                hideButtons();
+				
+			}     
+		});        
+		
+		
+		
 		
 	}
 	
@@ -84,14 +104,17 @@ public class MovieController implements Initializable {
 		
 		
 		if(mediaPlayer.getStatus().equals(Status.PLAYING)) {
+			buttonHideTimer.stop();
 			mediaPlayer.pause();
-			Playbutton.setText("►");
+			playbutton.setText("►");
+			showButtons();
 			labels.setVisible(true);
 			}
 		else {
 			mediaPlayer.play();
-			Playbutton.setText("| |");
+			playbutton.setText("| |");
 			labels.setVisible(false);
+			buttonHideTimer.start();
 		}
 		
 	}
@@ -116,8 +139,8 @@ public class MovieController implements Initializable {
 		
 		la_title.setText(film.getTitle());
 		la_description.setText(film.getDescription());
-		la_duration.setText("Dauer: "+film.getDuration()+ "Minuten");
-		la_fsk.setText("Altersbeschränkung: " + film.getFsk());
+		la_duration.setText("Dauer: "+film.getDuration()+ " Minuten");
+		la_fsk.setText("Altersbeschränkung: " + film.getFsk()+ " Jahre");
 		
 		List<Genre> genres = film.getGenreList();
 		
@@ -151,5 +174,32 @@ public class MovieController implements Initializable {
 		
 		
 	}
+	
+	
+	public void hideButtons() {		
+		backbutton.setVisible(false);
+		playbutton.setVisible(false);		
+	}
+	
+	
+	public void showButtons() {		
+		backbutton.setVisible(true);
+		playbutton.setVisible(true);
+		
+		
+	}
+	
+	@FXML
+	public void showButtonsMouseMoved() {
+				
+		if(mediaPlayer.getStatus().equals(Status.PLAYING)) {
+		buttonHideTimer.stop();
+		showButtons();
+		buttonHideTimer.start();	
+		}
+		
+	}
+	
+	
 
 }

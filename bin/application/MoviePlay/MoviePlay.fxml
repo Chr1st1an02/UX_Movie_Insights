@@ -9,21 +9,21 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MoviePlay.MovieController">
+<StackPane onMouseMoved="#showButtonsMouseMoved" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MoviePlay.MovieController">
    <children>
-      <MediaView fx:id="mediaView" fitHeight="2000" fitWidth="2000" />
-      <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0">
+      <MediaView fx:id="mediaView" fitHeight="2200" fitWidth="2200" />
+      <BorderPane fx:id="borderPane" onMouseMoved="#showButtonsMouseMoved" prefHeight="200.0" prefWidth="200.0">
          <center>
-            <JFXButton fx:id="Playbutton" onAction="#onClick" style="-fx-background-color: transparent;" text="►" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="playbutton" onAction="#onClick" style="-fx-background-color: rgba(255,255,255,0.15);" styleClass="movieButton" text="►" textFill="#61892f" BorderPane.alignment="CENTER">
                <font>
-                  <Font size="48.0" />
+                  <Font name="System Bold" size="58.0" />
                </font>
             </JFXButton>
          </center>
          <top>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <left>
-                  <JFXButton onAction="#onBackButton" text="🢀" BorderPane.alignment="CENTER">
+                  <JFXButton fx:id="backbutton" onAction="#onBackButton" styleClass="movieButton" style="-fx-background-color: rgba(255,255,255,0.1);" text="🢀" textFill="#6b6e70" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -32,18 +32,54 @@
             </BorderPane>
          </top>
          <bottom>
-            <VBox fx:id="labels" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox fx:id="labels" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: rgba(34,38, 41, 0.6);" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="la_title" alignment="CENTER" text="Titel" />
-                  <Label fx:id="la_description" alignment="CENTER" text="Description" />
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label fx:id="la_duration" text="Dauration" />
-                        <Label fx:id="la_fsk" text="FSK" />
-                        <Label fx:id="la_genre" text="Genre" />
-                        <Label fx:id="la_plattform" text="Plattforms" />
-                     </children>
-                  </HBox>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="la_title" alignment="CENTER" text="Titel" textFill="#86c232" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Tw Cen MT Condensed Extra Bold" size="126.0" />
+                           </font>
+                        </Label>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Label fx:id="la_description" alignment="CENTER" text="Description" textFill="#6b6e70" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label fx:id="la_duration" style="-fx-padding: 15;" text="Dauration" textFill="#6b6e70">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="la_fsk" style="-fx-padding: 15;" text="FSK" textFill="#6b6e70">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="la_genre" style="-fx-padding: 15;" text="Genre" textFill="#6b6e70">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="la_plattform" style="-fx-padding: 15;" text="Plattforms" textFill="#6b6e70">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </center>
+                  </BorderPane>
                </children>
             </VBox>
          </bottom>

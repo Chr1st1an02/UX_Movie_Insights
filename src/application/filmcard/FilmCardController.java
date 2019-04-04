@@ -85,6 +85,7 @@ public class FilmCardController implements Initializable {
 		 movieController.setMovie(film);
 		 movieController.setLables();
 		 ((Node)event.getSource()).getScene().setRoot(root);
+		 
 			 
 	 }
     
