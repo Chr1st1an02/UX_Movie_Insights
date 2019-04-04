@@ -23,7 +23,7 @@
                   <!-- </GridPane> -->
                </center>
    <right>
-      <JFXButton styleClass="hoverScale" onAction="#nextPage" style="-jfx-button-type: RAISED; -fx-background-radius: 50px; -fx-background-color: #86C232AF;" text="" BorderPane.alignment="CENTER">
+      <JFXButton onAction="#nextPage" style="-jfx-button-type: RAISED; -fx-background-radius: 50px; -fx-background-color: #86C232AF;" text="" BorderPane.alignment="CENTER">
          <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
@@ -37,7 +37,7 @@
       </JFXButton>
    </right>
    <left>
-      <JFXButton styleClass="hoverScale" onAction="#prevPage" style="-jfx-button-type: RAISED;-fx-background-radius: 50px; -fx-background-color:  #86C232AF;" text="" BorderPane.alignment="CENTER">
+      <JFXButton onAction="#prevPage" style="-jfx-button-type: RAISED;-fx-background-radius: 50px; -fx-background-color:  #86C232AF;" text="" BorderPane.alignment="CENTER">
          <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
