@@ -66,7 +66,7 @@ public class MainMovie extends Application {
 		 datenbank.addGenre(kinder);
 		 datenbank.addGenre(doku);
 		 
-		 for(int i=0; i<3;i++) {
+		 for(int i=0; i<4;i++) {
 			 Image bannerImage = new Image("/application/images/banner"+i+".jpg");
 			 datenbank.addBannerImages(bannerImage);
 		 }
