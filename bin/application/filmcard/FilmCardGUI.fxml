@@ -21,7 +21,7 @@
             </Label>
          </top>
          <bottom>
-            <JFXButton accessibleText="Film zu meiner Liste hinzufügen" mnemonicParsing="false" onAction="#addToList" style="-jfx-button-type: RAISED; -fx-background-color: rgba(134, 194, 50,0.8);" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
+            <JFXButton accessibleText="Film zu meiner Liste hinzufügen" mnemonicParsing="false" onAction="#addToList" style="-jfx-button-type: RAISED;" styleClass="favorite" BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fx:id="buttonImageView" accessibleHelp="Add to List" accessibleRole="BUTTON" accessibleText="Add to List" fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>

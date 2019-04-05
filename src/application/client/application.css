@@ -5,11 +5,28 @@
 .rubrikBox{
 	-fx-spacing: 1em;
 }
+
+.favorite{
+	
+	-fx-background-color:rgba(134, 194, 50,0.8);
+	
+}
+
+.favorite:hover{
+	
+	-fx-background-color:rgba(134, 194, 50,1);
+	-fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
+	
+}
+
 .menuIcon{
 	-fx-background-color: rgba(134, 194, 50,0); 
 	-fx-border-color: rgba(134, 194, 50,0);
 	-fx-text-fill: #86c232;
 }
+
 
 .menuIcon:hover{
 	-fx-scale-x: 1.3;
