@@ -71,9 +71,9 @@ public class MainMovie extends Application {
 			 datenbank.addBannerImages(bannerImage);
 		 }
 		 
-		 for(int i=0;i<2;i++) {
-			 Image filmCardImage = new Image("/application/images/film"+i+".jpg");
-			 datenbank.addFilmCardImages(filmCardImage);
+		 for(int i=0;i<1;i++) {
+			Image filmCardImage = new Image("/application/images/film"+i+".jpg");
+			datenbank.addFilmCardImages(filmCardImage);
 		 }
 		 
 		 for(int i =0; i<20 ; i++) {
