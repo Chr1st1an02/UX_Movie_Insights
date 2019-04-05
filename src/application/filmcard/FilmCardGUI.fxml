@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="163.0" maxWidth="120.0" minHeight="163.0" minWidth="120.0" onMousePressed="#onMovie" prefHeight="163.0" prefWidth="120.0" styleClass="hoverScale" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
+<StackPane fx:id="filmCardStack" maxHeight="163.0" maxWidth="120.0" minHeight="163.0" minWidth="120.0" onMousePressed="#onMovie" prefHeight="163.0" prefWidth="120.0" styleClass="hoverScale" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.filmcard.FilmCardController">
    <children>
       <ImageView fx:id="filmCardImage" fitHeight="163.0" fitWidth="120.0" onMouseClicked="#onMovie" pickOnBounds="true" preserveRatio="true" />
       <BorderPane maxHeight="173.0" maxWidth="120.0" minHeight="163.0" minWidth="120.0" style="-fx-background-color: transparent;">
@@ -21,7 +21,7 @@
             </Label>
          </top>
          <bottom>
-            <JFXButton mnemonicParsing="false" onAction="#addToList" style="-jfx-button-type: RAISED; -fx-background-color: #86C232;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
+            <JFXButton accessibleText="Film zu meiner Liste hinzufügen" mnemonicParsing="false" onAction="#addToList" style="-jfx-button-type: RAISED; -fx-background-color: #86C232;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fx:id="buttonImageView" accessibleHelp="Add to List" accessibleRole="BUTTON" accessibleText="Add to List" fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>

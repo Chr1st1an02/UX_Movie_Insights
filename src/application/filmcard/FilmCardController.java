@@ -27,6 +27,9 @@ public class FilmCardController implements Initializable {
 	private Film film;
 	
 	@FXML
+	private StackPane filmCardStack;
+	
+	@FXML
     private ImageView filmCardImage;
 	
     @FXML
@@ -34,6 +37,7 @@ public class FilmCardController implements Initializable {
     
     @FXML
     private Tooltip tooltip;
+    
     @FXML 
     private ImageView buttonImageView;
     
@@ -59,6 +63,8 @@ public class FilmCardController implements Initializable {
 			buttonImageView.setAccessibleHelp("Aus MyList entfernen");
 			buttonImageView.setImage(new Image("/application/images/icons8-broken-heart-52.png"));
 		}
+		filmCardStack.setAccessibleHelp("Filmcard für Filmtitel: "+ film.getTitle());
+		
 	}
     
 	 @FXML
