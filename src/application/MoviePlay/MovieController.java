@@ -122,7 +122,7 @@ public class MovieController implements Initializable {
 	@FXML
 	public void onBackButton(ActionEvent event) throws IOException {
 		
-		
+		mediaPlayer.stop();
 		StackPane root = FXMLLoader.load(getClass().getResource("/application/client/MainGUI.fxml"));
 		
 		((Node)event.getSource()).getScene().setRoot(root);
