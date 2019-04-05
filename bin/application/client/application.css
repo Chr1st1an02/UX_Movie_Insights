@@ -26,6 +26,11 @@
 	
 }
 
+.filmCardLabel{
+-fx-background-color:  #474B4FAA;
+
+}
+
 
 .black {
    -fx-background: #222629;
