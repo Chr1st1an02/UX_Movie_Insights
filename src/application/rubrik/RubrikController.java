@@ -107,6 +107,7 @@ public class RubrikController implements  Initializable{
     
     private void setTitle(String title) {
     	lblRubrikTitle.setText(title);
+    	lblRubrikTitle.setAccessibleText(title);
     }
 
 	

@@ -7,7 +7,7 @@
 
 <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menu.filter.MenuFilterController">
                <top>
-                  <Label fx:id="lblFilterTitle" text="lblFilterTitle" BorderPane.alignment="CENTER">
+                  <Label fx:id="lblFilterTitle" accessibleText="Filter Titel" text="lblFilterTitle" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="30.0" />
          </font></Label>

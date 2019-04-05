@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tooltip?>
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,7 +12,7 @@
 <BorderPane prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.navigation.NavigationController">
    <right>
   		<HBox>
-     <JFXButton id="vorgemerkt" mnemonicParsing="false" style="-jfx-button-type: RAISED;" onAction="#onVorgemerktClicked" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
+     <JFXButton id="vorgemerkt" accessibleText="MyList anzeigen" mnemonicParsing="false" onAction="#onVorgemerktClicked" style="-jfx-button-type: RAISED;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
      	<graphic>
             <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -25,7 +24,7 @@
             <Tooltip text="DeadEnd für die vorgemerkte Liste" />
          </tooltip>
      </JFXButton>
-     <JFXButton  id="einstellungen" mnemonicParsing="false" style="-jfx-button-type: RAISED;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
+     <JFXButton id="einstellungen" accessibleText="Einstellungen öffnen" mnemonicParsing="false" style="-jfx-button-type: RAISED;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
      	<graphic>
             <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -41,7 +40,7 @@
      
    </right>
    <left>
-     <JFXButton mnemonicParsing="false" onAction="#onMenuClicked" style="-jfx-button-type: RAISED;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
+     <JFXButton accessibleText="Menu öffnen" mnemonicParsing="false" onAction="#onMenuClicked" style="-jfx-button-type: RAISED;" styleClass="menuIcon, hoverScale" BorderPane.alignment="CENTER">
      <graphic>
             <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -55,7 +54,7 @@
      </JFXButton>
    </left>
    <center>
-      <Label style="-fx-text-fill: #86C232;" text="MOVIE INSIGHTS" textFill="#88c232" BorderPane.alignment="CENTER">
+      <Label accessibleText="MOVIE INSIGHTS" style="-fx-text-fill: #86C232;" text="MOVIE INSIGHTS" textFill="#88c232" BorderPane.alignment="CENTER">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="96.0" />
          </font>

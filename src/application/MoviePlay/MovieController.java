@@ -107,12 +107,14 @@ public class MovieController implements Initializable {
 			buttonHideTimer.stop();
 			mediaPlayer.pause();
 			playbutton.setText("►");
+			playbutton.setAccessibleText("Starte Film");
 			showButtons();
 			labels.setVisible(true);
 			}
 		else {
 			mediaPlayer.play();
 			playbutton.setText("| |");
+			playbutton.setAccessibleText("Pausiere Film");
 			labels.setVisible(false);
 			buttonHideTimer.start();
 		}
@@ -138,9 +140,13 @@ public class MovieController implements Initializable {
 	public void setLables() {
 		
 		la_title.setText(film.getTitle());
+		la_title.setAccessibleText(film.getTitle());
 		la_description.setText(film.getDescription());
+		la_description.setAccessibleText(film.getDescription());
 		la_duration.setText("Dauer: "+film.getDuration()+ " Minuten");
+		la_duration.setAccessibleText("Dauer: "+film.getDuration()+ " Minuten");
 		la_fsk.setText("Altersbeschränkung: " + film.getFsk()+ " Jahre");
+		la_fsk.setAccessibleText("Altersbeschränkung: " + film.getFsk()+ " Jahre");
 		
 		List<Genre> genres = film.getGenreList();
 		
@@ -155,6 +161,7 @@ public class MovieController implements Initializable {
 		genreLabel = genreLabel + genres.get(genres.size()-1).getName();
 		
 		la_genre.setText(genreLabel);
+		la_genre.setAccessibleText(genreLabel);
 		
 		
 		List<Plattform> plattforms = film.getPlattformList();
@@ -170,6 +177,7 @@ public class MovieController implements Initializable {
 		plattformLabel = plattformLabel + plattforms.get(plattforms.size()-1).getName();
 		
 		la_plattform.setText(plattformLabel);
+		la_plattform.setAccessibleText(plattformLabel);
 		
 		
 		

@@ -14,7 +14,7 @@
       <MediaView fx:id="mediaView" fitHeight="2200" fitWidth="2200" />
       <BorderPane fx:id="borderPane" onMouseMoved="#showButtonsMouseMoved" prefHeight="200.0" prefWidth="200.0">
          <center>
-            <JFXButton fx:id="playbutton" onAction="#onClick"  styleClass="movieButton" text="►" textFill="#61892f" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="playbutton" accessibleText="Film Starten" onAction="#onClick" styleClass="movieButton" text="►" textFill="#61892f" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="58.0" />
                </font>
@@ -23,7 +23,7 @@
          <top>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <left>
-                  <JFXButton fx:id="backbutton" onAction="#onBackButton" styleClass="movieButton" style="-fx-background-color: rgba(255,255,255,0.1);" text="🢀" textFill="#6b6e70" BorderPane.alignment="CENTER">
+                  <JFXButton fx:id="backbutton" accessibleText="Film verlassen" onAction="#onBackButton" style="-fx-background-color: rgba(255,255,255,0.1);" styleClass="movieButton" text="🢀" textFill="#6b6e70" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="36.0" />
                      </font>

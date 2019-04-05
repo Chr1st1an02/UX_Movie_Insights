@@ -60,10 +60,10 @@ public class FilmCardController implements Initializable {
 		
 		if(film.getGenreList().contains(datenbank.getMyList())) {
 			tooltip.setText("Aus MyList entfernen");
-			buttonImageView.setAccessibleHelp("Aus MyList entfernen");
+			buttonImageView.setAccessibleText("Aus MyList entfernen");
 			buttonImageView.setImage(new Image("/application/images/icons8-broken-heart-52.png"));
 		}
-		filmCardStack.setAccessibleHelp("Filmcard für Filmtitel: "+ film.getTitle());
+		filmCardStack.setAccessibleText("Filmcard für Filmtitel: "+ film.getTitle());
 		
 	}
     

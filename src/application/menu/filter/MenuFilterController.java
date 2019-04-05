@@ -38,6 +38,7 @@ public class MenuFilterController implements Initializable {
 	
 	public void setTitle(String text) {
 		lblFilterTitle.setText(text);
+		lblFilterTitle.setAccessibleText("Filter für: "+text);
 	}
 	
 	public void setFilterbar(List<? extends Filterbar> filterbars) {

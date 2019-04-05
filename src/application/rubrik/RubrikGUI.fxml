@@ -12,7 +12,7 @@
 
 <BorderPane id="rubrikPane" fx:id="rubrikPane" maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="400.0" prefHeight="200.0" prefWidth="517.0" style="-fx-background-color: #222629;" styleClass="rubrikPane" GridPane.rowIndex="2" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rubrik.RubrikController">
                <top>
-                  <Label fx:id="lblRubrikTitle" style="-fx-text-fill: #FFFFFF;" text="Title" BorderPane.alignment="CENTER">
+                  <Label fx:id="lblRubrikTitle" accessibleText="Title" style="-fx-text-fill: #FFFFFF;" text="Title" BorderPane.alignment="CENTER">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="36.0" />
          </font></Label>
@@ -23,7 +23,7 @@
                   <!-- </GridPane> -->
                </center>
    <right>
-      <Button onAction="#nextPage" styleClass="rubrikButton" text="" BorderPane.alignment="CENTER">
+      <Button accessibleText="nächste Seite" onAction="#nextPage" styleClass="rubrikButton" text="" BorderPane.alignment="CENTER">
          <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
@@ -37,7 +37,7 @@
       </Button>
    </right>
    <left>
-      <Button onAction="#prevPage" styleClass="rubrikButton" text="" BorderPane.alignment="CENTER">
+      <Button accessibleText="vorherige Seite" onAction="#prevPage" styleClass="rubrikButton" text="" BorderPane.alignment="CENTER">
          <graphic>
 			            <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
 			               <image>
