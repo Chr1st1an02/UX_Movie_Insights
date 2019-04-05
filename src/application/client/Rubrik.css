@@ -1,14 +1,12 @@
 .rubrikButton:hover{
 	
-
--fx-background-color: #61892F;
+-fx-background-color: rgba(255,255,255,0.9);
 
 }
 
 
 .rubrikButton:pressed{
 	
-
 -fx-background-color: #86c232;
 
 }

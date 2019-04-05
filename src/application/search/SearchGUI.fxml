@@ -7,7 +7,7 @@
 
 <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222629;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<top>
-    	<Label style="-fx-text-fill: #86C232;" text="Suche" BorderPane.alignment="CENTER">
+    	<Label style="-fx-text-fill: #FFFFFF;" text="Suche" BorderPane.alignment="CENTER">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
          </font></Label>

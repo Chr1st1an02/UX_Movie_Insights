@@ -1,0 +1,11 @@
+.jfx-check-box {
+     -jfx-checked-color: #86c232;
+     -jfx-unchecked-color: #6b6e70;
+     -fx-padding: 4;
+     -fx-font-size: 18;
+}
+
+/* Styling checkmark */
+.jfx-check-box .mark{
+     -fx-border-color: white;
+}

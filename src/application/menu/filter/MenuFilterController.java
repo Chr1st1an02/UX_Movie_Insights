@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXCheckBox;
 
 import application.filter.Filter;
 import javafx.event.ActionEvent;
@@ -19,10 +20,10 @@ import javafx.scene.layout.VBox;
 
 public class MenuFilterController implements Initializable {
 
-	private List<CheckBox> checkBoxList;
+	private List<JFXCheckBox> checkBoxList;
 	private List<? extends Filterbar> filterbarList;
 	
-	private HashMap<Filterbar, CheckBox> filterbarMap;
+	private HashMap<Filterbar, JFXCheckBox> filterbarMap;
    
 	 @FXML
 	 private Label lblFilterTitle;
@@ -41,9 +42,9 @@ public class MenuFilterController implements Initializable {
 	
 	public void setFilterbar(List<? extends Filterbar> filterbars) {
 		this.filterbarList = filterbars;
-		filterbarMap = new HashMap<Filterbar, CheckBox>();
+		filterbarMap = new HashMap<Filterbar, JFXCheckBox>();
 		for(Filterbar filterbar : filterbars) {
-			CheckBox checkBox = new CheckBox(filterbar.getName());
+			JFXCheckBox checkBox = new JFXCheckBox(filterbar.getName());
 			
 			
 			checkBox.setSelected(Filter.getFilter().isActiv(filterbar));
@@ -55,9 +56,9 @@ public class MenuFilterController implements Initializable {
 	
 
 	public void updateFilter(Filter filter) {
-		for(Map.Entry<Filterbar, CheckBox> entry : filterbarMap.entrySet()) {
+		for(Map.Entry<Filterbar, JFXCheckBox> entry : filterbarMap.entrySet()) {
 		    Filterbar filterbar = entry.getKey();
-		    CheckBox checkBox = entry.getValue();
+		    JFXCheckBox checkBox = entry.getValue();
 
 		    if(checkBox.isSelected())
 				filter.addFilter(filterbar);

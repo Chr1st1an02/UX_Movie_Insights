@@ -35,6 +35,7 @@ public class MainMovie extends Application {
 			scene.getStylesheets().add(getClass().getResource("ScrollPane.css").toExternalForm());
 			scene.getStylesheets().add(getClass().getResource("MoviePlay.css").toExternalForm());
 			scene.getStylesheets().add(getClass().getResource("Rubrik.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("Filter.css").toExternalForm());
 			
 			primaryStage.setScene(scene);
 			primaryStage.show();
